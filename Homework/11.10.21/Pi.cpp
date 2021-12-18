@@ -23,4 +23,5 @@ int main() {
         sum += get_nth_term(++n);
     } while (std::abs(4 * (sum - prev_sum)) > precision);
     std::cout << "Pi=" << 4 * sum << std::endl;
+    std::cout << "Iterations:  " << n;
 }
