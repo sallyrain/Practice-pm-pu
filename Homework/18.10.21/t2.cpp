@@ -1,23 +1,35 @@
 #include <iostream>
+using namespace std;
 int main(){
-	int n;
-	int s=0; //step
-	int m = 0; //max
-	std::cout << "Enter n: " << std::endl;
-	std::cin >> n;
-	while ((n != 1) && (n!=0)){
-		s++;
-		if (n > m) {
-			m = n;
-		}
-		if (n % 2 == 0) {
-			n = n / 2;
-		}
-		else {
-			n = n * 3+1;
-		}
-	}
-	std::cout << "Step: " << s << std::endl;
-	std::cout << "Max: " << m << std::endl;
+    int x;
+    do {
+        cout << "Input natural number: " << endl;
+        cin >> x;
+    } while (x < 0);
+    int N;
+    do {
+        cout << "Input number system: " << endl;
+        cin >> N;
+    } while (N < 2 or N > 16);
 
+    int tmp = x, m = 1;
+
+    while (tmp) {
+        m *= N;
+        tmp /= N;
+    }
+    tmp = x;
+    while (m) {
+        int i = tmp / m;
+        if (i < 10) {
+            cout << i << endl;
+        }
+        else {
+            cout << char('A' + i - 10) << endl;
+        }
+        tmp %= m;
+        m /= N;
+    }
+    
+    return 0;
 }
