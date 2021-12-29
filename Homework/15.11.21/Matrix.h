@@ -5,7 +5,7 @@ double determinant(double** A, int n) {
 	bool Y;
 	int element = 0;
 	short int sign = 1;
-	double k;
+	double kofi;
 	for (int i = 0; i < n - 1; ++i) {
 		if (M[i][i] == 0) {
 			Y = true;
@@ -23,10 +23,10 @@ double determinant(double** A, int n) {
 			swapColumns(M, n, i, element);
 			sign *= -1;
 		}
-		for (int k = i + 1; k < n; ++k) {
-			k = M[k][i] / M[i][i];
+		for (int  = i + 1; k < n; ++k) {
+			kofi = M[k][i] / M[i][i];
 			for (int j = i; j < n; ++j) {
-				M[k][j] = M[k][j] - k * M[i][j];
+				M[k][j] = M[k][j] - kofi * M[i][j];
 			}
 
 		}
