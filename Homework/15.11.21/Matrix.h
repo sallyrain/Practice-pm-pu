@@ -23,7 +23,7 @@ double determinant(double** A, int n) {
 			swapColumns(M, n, i, element);
 			sign *= -1;
 		}
-		for (int  = i + 1; k < n; ++k) {
+		for (int k = i + 1; k < n; ++k) {
 			kofi = M[k][i] / M[i][i];
 			for (int j = i; j < n; ++j) {
 				M[k][j] = M[k][j] - kofi * M[i][j];
